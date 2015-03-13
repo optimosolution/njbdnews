@@ -1,0 +1,106 @@
+.bottom{
+    padding: 20px 0px 20px 0px;
+    background-color: #FFF;
+    color: #000;
+    border-top: 2px solid red;
+}
+.bottom_text{
+    margin-left: 130px;
+    min-height: 70px;
+}
+.bottom_title{
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 800;
+}
+.copyright{
+    padding: 10px 0px 10px 0px;
+    background-color: #D37632;
+    color: #000;
+}
+.copyright_text{
+    margin-left: 130px;
+    text-align: center;
+    font-size: 12px;
+}
+.textCenter{
+    text-align: center;
+}
+.bodyCenter{
+    margin: auto;
+}
+.hr_border{
+    border-bottom: 1px dotted #777;
+    line-height: 40px;
+    padding-bottom: 5px;
+}
+div.hr_border {
+    border: none;
+    border-bottom:1px dotted #999; 
+    clear:both; 
+    height:0; 
+    width: 100%;
+    margin-bottom: 10px;
+}
+a.home_top_news:link, a.home_top_news:visited{
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+a.home_top_news:hover{
+    font-size: 20px;
+    color: #ED1F24;
+    text-decoration: none;
+}
+a.home_news:link{
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    line-height: 25px;
+}
+a.home_news:visited{
+    font-size: 16px;
+    color: #7f0000;
+    text-decoration: none;
+}
+a.home_news:hover{
+    font-size: 16px;
+    color: #777;
+    text-decoration: none;
+}
+.date_bg{
+    background-color: #680002;
+    padding: 10px;
+    text-align: right;
+    color: #FFFFFF;   
+    font-size: 16px;
+}
+.footer_text{
+    text-align: center;
+}
+.news_title{
+    font-size: 26px;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    color: #C8001E;
+    line-height: 30px;
+}
+a.category_title:link, a.category_title:visited{
+    font-size: 26px;
+    color: #000000;
+    text-decoration: none;
+    line-height: 40px;
+}
+a.category_title:hover{
+    color: #ED1F24;
+    text-decoration: none;
+}
+.hrline{
+    border-bottom: 1px solid #000;
+    height: 2px;
+    margin-bottom: 10px;
+}
+.hrline_top{
+    border-bottom: 1px double #000;
+    height: 4px;
+}
