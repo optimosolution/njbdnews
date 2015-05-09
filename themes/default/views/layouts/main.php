@@ -8,8 +8,7 @@
         <?php Yii::app()->bootstrap->register(); ?>
         <link rel="shortcut icon" href="<?php echo Yii::app()->theme->baseUrl; ?>/images/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
-        <title><?php echo CHtml::encode($this->pageTitle); ?></title> 
-        <?php $this->widget('ext.widgets.googleAnalytics.EGoogleAnalyticsWidget', array('account' => 'WW-DDDDDDD-DD', 'domainName' => '.example.com')); ?>
+        <title><?php echo CHtml::encode($this->pageTitle); ?></title>        
     </head>
     <body>                
         <div class="container">

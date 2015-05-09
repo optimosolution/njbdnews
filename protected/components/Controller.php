@@ -186,30 +186,26 @@ class Controller extends CController {
     }
 
     public function get_news_by_category_home($catid) {
-        $array = Yii::app()->db->createCommand()
-                ->select('*')
-                ->from('{{content}}')
-                ->where('catid=' . $catid . ' AND state=1 ')
-                ->limit('1')
-                ->order('created DESC, id DESC')
-                ->queryAll();
-
-        $oDbConnection = Yii::app()->db;
-        $oCommand = $oDbConnection->createCommand('SELECT id, title FROM {{content}} WHERE state = 1 AND catid=' . $catid . ' ORDER BY created DESC, id DESC LIMIT 1,10');
-        $oCDbDataReader = $oCommand->queryAll();
-
+        $model = Content::model()->findAll(
+                array(
+                    'condition' => 'catid=' . $catid . ' AND state=1',
+                    'order' => 'created DESC, id DESC',
+                    'limit' => '10'
+        ));
+        //category title
         echo '<div style="border-bottom:2px solid #666666; margin-bottom:10px;">' . CHtml::link($this->get_category_name($catid), array('content/index', 'id' => $catid), array('class' => 'category_title', 'target' => '_blank')) . '</div>';
-
-        foreach ($array as $key => $values) {
-            echo '<div>' . CHtml::link($values['title'], array('content/view', 'id' => $values['id']), array('class' => 'home_top_news', 'target' => '_blank')) . '</div>';
-            echo '<div class="hr_border">&nbsp;</div>';
-            echo '<p><span style="float:left; margin:5px;">' . CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/' . $values["profile_picture"], $values['title'], array("width" => 80, "height" => 70, 'title' => $values['title'])) . '</span>';
-            echo '<span>' . $this->text_cut(htmlspecialchars_decode(CHtml::encode($this->strip_html_tags($values["introtext"]))), 400) . '</span></p>';
-        }
-
+        $i = 1;
         echo '<ul>';
-        foreach ($oCDbDataReader as $key => $values) {
-            echo '<li>' . CHtml::link($values['title'], array('content/view', 'id' => $values['id']), array('class' => 'home_news', 'target' => '_blank')) . '</li>';
+        foreach ($model as $key => $values) {
+            if ($i == 1) {
+                echo '<div>' . CHtml::link($values['title'], array('content/view', 'id' => $values['id']), array('class' => 'home_top_news', 'target' => '_blank')) . '</div>';
+                echo '<div class="hr_border">&nbsp;</div>';
+                echo '<p><span style="float:left; margin:5px;">' . CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/' . $values["profile_picture"], $values['title'], array("width" => 80, "height" => 70, 'title' => $values['title'])) . '</span>';
+                echo '<span>' . $this->text_cut(htmlspecialchars_decode(CHtml::encode($this->strip_html_tags($values["introtext"]))), 400) . '</span></p>';
+            } else {
+                echo '<li>' . CHtml::link($values['title'], array('content/view', 'id' => $values['id']), array('class' => 'home_news', 'target' => '_blank')) . '</li>';
+            }
+            $i++;
         }
         echo '</ul>';
     }
