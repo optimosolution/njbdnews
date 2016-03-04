@@ -26,7 +26,7 @@
                             <div class="span12">
                                 <!--<div class="bottom_title">Editor & Publisher: MD Nasir</div>-->
                                 <!--<p class="footer_text">132-71st Street ( First Floor) Guttenberg New Jersey, NJ07093 USA, Phone: 201-978-8107, Email: <a href="mailto:njbdnews@outlook.com">njbdnews@outlook.com</a>, <a href="mailto:njbdnews@aol.com">njbdnews@aol.com</a></p>-->
-                                <p class="footer_text">Email: <a href="mailto:njbdnews@outlook.com">njbdnews@outlook.com</a>, <a href="mailto:njbdnews@aol.com">njbdnews@aol.com</a></p>
+                                <!--<p class="footer_text">Email: <a href="mailto:njbdnews@outlook.com">njbdnews@outlook.com</a>, <a href="mailto:njbdnews@aol.com">njbdnews@aol.com</a></p>-->
                                 <p class="footer_text">Copyright &copy; 2012-2017 All Rights Reserved. NJBDNEWS.COM.</p>
                             </div>
                         </div>

@@ -19,26 +19,16 @@ $this->breadcrumbs = array(
 <p class="news_date"><?php echo date("F j, Y, g:i A", strtotime($model->created)); ?>, Hits: <?php echo $model->hits; ?></p>
 <p>
     <?php
-    $this->widget('application.extensions.addThis.addThis', array(
-        'id' => 'addThis',
-        'username' => 'saidurwd@gmail.com',
-        'defaultButtonCaption' => 'Share',
-        'showDefaultButton' => true,
-        'showDefaultButtonCaption' => true,
-        'separator' => '|',
-        'htmlOptions' => array(),
-        'linkOptions' => array(),
-        'showServices' => array('facebook', 'twitter', 'myspace', 'email', 'print'),
-        'showServicesTitle' => false,
-        'config' => array('ui_language' => 'en'),
-        'share' => array(),
-            )
-    );
-    ?>
+	$this->widget('application.extensions.SocialShareButton.SocialShareButton', array(
+		'style' => 'horizontal',
+		'networks' => array('facebook', 'googleplus', 'linkedin', 'twitter'),
+		'data_via' => '', //twitter username (for twitter only, if exists else leave empty) //thumbnail
+	));
+	?>
 </p>
 <div style="clear: both;">&nbsp;</div>
 <div>
-    <span class="thumbnail" style="margin: 0px 15px 15px 0px; float: left;"><?php echo CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/' . $model->profile_picture, $model->title, array("width" => 370, 'title' => $model->title, 'alt' => $model->title)); ?></span>
+    <span class="" style="margin: 0px 15px 15px 0px; float: left;"><?php echo CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/' . $model->profile_picture, '', array("width" => 370)); ?></span>
     <span><?php echo $model->introtext; ?></span>
 </div>
 <div style="clear: both;">&nbsp;</div>
